@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Test Suite">
+    <test name="Browser Test">
+        <classes>
+            <class name="Academy.BrowserTest" /> <!-- Fully qualified name -->
+        </classes>
+    </test>
+</suite>
