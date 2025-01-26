@@ -17,7 +17,7 @@
 
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
-		
+
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
@@ -32,6 +32,61 @@
 			<version>5.9.2</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.10.2</version>
+			<scope>test</scope>
+		</dependency>
+
 
 	</dependencies>
+
+	<!-- Build Plugins -->
+	<build>
+		<!-- To define the plugin version in your parent POM -->
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.11.0</version>
+				</plugin>
+
+				<plugin>
+
+					<groupId>org.apache.maven.plugins</groupId>
+
+					<artifactId>maven-surefire-plugin</artifactId>
+
+					<version>3.5.0</version>
+
+					<configuration>
+
+						<testFailureIgnore>false</testFailureIgnore>
+						<suiteXmlFiles>
+							<suiteXmlFile>testng.xml</suiteXmlFile>
+						</suiteXmlFiles>
+					</configuration>
+
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<!-- To use the plugin goals in your POM or parent POM -->
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>21</source>
+					<target>21</target>
+
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
 </project>
